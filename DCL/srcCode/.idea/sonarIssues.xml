@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/GridCellEditorTextField">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/dummy.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="1b49055e-4b7f-4337-9c23-1e4534abde62/schema/XCZX/table/T_HISTORY_BROADCASTPUSH.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="1b49055e-4b7f-4337-9c23-1e4534abde62/schema/XCZX/table/T_HISTORY_DETAIL.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/1b49055e-4b7f-4337-9c23-1e4534abde62/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../iot/srcCode/iot-web/src/main/java/cn/ffcs/iot/videotask/service/impl/VideoTaskServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../iot/srcCode/iot-web/target/classes/cn/ffcs/iot/videotask/controller/VideoTaskController.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../iot/srcCode/iot-web/target/classes/cn/ffcs/iot/videotask/service/impl/VideoTaskServiceImpl.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-api/src/main/java/cn/ffcs/dcl/mybatis/domain/historydetail/HistoryDetail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/java/cn/ffcs/dcl/historybroadcastpush/controller/HistoryBroadcastpushController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/java/cn/ffcs/dcl/historybroadcastpush/service/HistoryBroadcastpushServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/java/cn/ffcs/dcl/historydetail/controller/HistoryDetailController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/resources/applicationContext-dubbo.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/resources/cn/ffcs/dcl/mybatis/persistence/historybroadcastpush/HistoryBroadcastpushMapper.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/resources/cn/ffcs/dcl/mybatis/persistence/historydetail/HistoryDetailMapper.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/template/dcl/historyBroadcastpush/history_broadcastpush.ftl">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/template/dcl/historyDetail/history_detail_list.ftl">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/template/dcl/newWorkbench/workBench_index.ftl">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/views/mobile/newApp/agriculturalServices/4.0-snfw.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/views/mobile/newApp/culturaltourism/culturaltourism_app_list.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/views/mobile/newApp/partyLeading/partyLeading_index.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/views/mobile/newApp/ruralGovernance/rural_governance_newApp_list.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dcl-web/src/main/webapp/WEB-INF/views/mobile/szshapphome/index-szshV0101.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../深圳扶贫3/srcCode/tpr-web/src/main/java/cn/ffcs/tpr/cooperationreport/controller/CooperationReportController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../深圳扶贫3/srcCode/tpr-web/src/main/webapp/WEB-INF/template/tpr/unit/activity/activity_list.ftl">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

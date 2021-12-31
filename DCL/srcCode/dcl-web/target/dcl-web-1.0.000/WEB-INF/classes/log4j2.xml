@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--每60秒自动检查和配置文件的更新-->
+<configuration status="warn" monitorInterval="60">
+	<!-- 总体把appender和logger定义分离并，logger使用ref引用appender名称，
+	  appender定义不需要写class全名，只要写已定义的标签即可
+	  详细配置请看：https://logging.apache.org/log4j/2.x/manual/configuration.html -->
+	<appenders>
+		<console name="consoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%date{yyyy-MM-dd HH:mm:ss:SSS z}] [%level][%thread] [%class{6}:%line] - %message%n"/>
+		</console>
+	</appenders>
+	
+	<loggers>
+		<root level="warn" includeLocation="true">
+			<appender-ref ref="consoleAppender"/>
+		</root>
+		<!--logger内部没有配置appener，会使用根root的appender，此时不用设置additivity=false-->
+		<logger name="cn.ffcs" level="debug" />
+		<logger name="org.apache.zookeeper.ZooKeeper" level="WARN"/>
+		<logger name="org.apache.zookeeper.ClientCnxn" level="WARN"/>
+		<logger name="org.apache.dubbo.config.AbstractConfig" level="WARN"/>
+		<logger name="org.apache.dubbo.registry.zookeeper.ZookeeperRegistry" level="WARN"/>
+		<logger name="org.springframework.core.io.support.PathMatchingResourcePatternResolver" level="WARN"/>
+	</loggers>
+</configuration>

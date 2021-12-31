@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.ffcs.zzgrid:sq-zzgrid-api:6.0.050.006">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/zzgrid/sq-zzgrid-api/6.0.050.006/sq-zzgrid-api-6.0.050.006.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/zzgrid/sq-zzgrid-api/6.0.050.006/sq-zzgrid-api-6.0.050.006-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/zzgrid/sq-zzgrid-api/6.0.050.006/sq-zzgrid-api-6.0.050.006-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

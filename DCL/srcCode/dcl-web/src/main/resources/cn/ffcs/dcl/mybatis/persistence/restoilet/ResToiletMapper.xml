@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ffcs.dcl.mybatis.persistence.restoilet.ResToiletMapper">
+	<resultMap id="BaseResultMap" type="cn.ffcs.dcl.mybatis.domain.restoilet.ResToilet">
+		<id column="RES_TOILET_ID" property="resToiletId" jdbcType="DECIMAL" /> <!--厕所ID-->
+		<result column="UUID" property="uuid" jdbcType="VARCHAR" /> <!--一般户逻辑主键-->
+		<result column="WC_CODE" property="wcCode" jdbcType="VARCHAR" /> <!--公厕编号-->
+		<result column="GC_WC_TYPE" property="gcWcType" jdbcType="VARCHAR" /> <!--公厕类型-->
+		<result column="IS_SUPPORT" property="isSupport" jdbcType="VARCHAR" /> <!--是否财政支持-->
+		<result column="TOILET_ADDR" property="toiletAddr" jdbcType="VARCHAR" /> <!--建设位置-->
+		<result column="BUILD_TIME" property="buildTime" jdbcType="VARCHAR" /> <!--建造年份-->
+		<result column="WC_CLASS" property="wcClass" jdbcType="VARCHAR" /> <!--公厕种类（单选）-->
+		<result column="AREA" property="area" jdbcType="DECIMAL" /> <!--使用面积（M2)（填写，单位为“平方米”）-->
+		<result column="TOILET_ITEM_NUM" property="toiletItemNum" jdbcType="DECIMAL" /> <!--蹲位（个）（填写，单位为“个”）-->
+		<result column="DISPOSAL_EX_METHON" property="disposalExMethon" jdbcType="VARCHAR" /> <!--粪污处理方式（单选）-->
+		<result column="IS_VALID" property="isValid" jdbcType="VARCHAR" /> <!--是否有效-->
+		<result column="CREATOR" property="creator" jdbcType="DECIMAL" /> <!--创建人-->
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" /> <!--创建人时间-->
+		<result column="UPDATOR" property="updator" jdbcType="DECIMAL" /> <!--修改人-->
+		<result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" /> <!--修改时间-->
+		<result column="RE_ORG_CODE" property="reOrgCode" jdbcType="VARCHAR" /> <!--所属区域编码-->
+		<result column="REGION_NAME" property="regionName" jdbcType="VARCHAR" /> <!--所属区域名称-->
+		<result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" /> <!--组织编码-->
+		<result column="RES_TOILET_EQUIP_ID" property="resToiletEquipId" jdbcType="DECIMAL" /> <!--厕所ID-->
+		<result column="GUID" property="guid" jdbcType="VARCHAR" /> <!--临时唯一标识-->
+		<result column="IS_ACTUAL_VALID" property="isActualValid" jdbcType="VARCHAR" /> <!--是否实际有效-->
+	</resultMap>
+
+	<!-- 列表（总数） -->
+	<select id="countList"  resultType="java.lang.Long">
+		SELECT COUNT(1) FROM T_RES_TOILET T
+		<include refid="find_where" />
+	</select>
+
+	<!-- 列表（分页） -->
+	<select id="searchList"  resultMap="BaseResultMap">
+		SELECT
+		T.UUID,
+		T.WC_CODE,
+		T.GC_WC_TYPE,
+		T.IS_SUPPORT,
+		T.TOILET_ADDR,
+		T.BUILD_TIME,
+		T.WC_CLASS,
+		T.AREA,
+		T.TOILET_ITEM_NUM,
+		T.DISPOSAL_EX_METHON,
+		T.IS_VALID,
+		T.CREATOR,
+		T.CREATE_TIME,
+		T.UPDATOR,
+		T.UPDATE_TIME,
+		T.RE_ORG_CODE,
+		T.REGION_NAME,
+		T.ORG_CODE,
+		T.RES_TOILET_EQUIP_ID,
+		T.GUID,
+		T.IS_ACTUAL_VALID
+		FROM
+		T_RES_TOILET T
+		<include refid="find_where" />
+		ORDER BY
+		T.UUID DESC
+	</select>
+
+	<!-- 列表（条件） -->
+	<sql id="find_where">
+		<where>
+			T.IS_VALID='1'
+			<if test="resToiletEquipId != null and resToiletEquipId != '' and ( guid == null or guid == '')" >
+				<![CDATA[ AND T.IS_ACTUAL_VALID = '1' AND T.RES_TOILET_EQUIP_ID = #{resToiletEquipId,jdbcType=VARCHAR} ]]>
+			</if>
+			<if test="resToiletEquipId != null and resToiletEquipId != '' and guid != null and guid != ''" >
+				<![CDATA[ AND ((T.RES_TOILET_EQUIP_ID = #{resToiletEquipId,jdbcType=VARCHAR} AND T.IS_ACTUAL_VALID = '1')
+			    or (T.GUID = #{guid,jdbcType=VARCHAR})) ]]>
+			</if>
+		</where>
+	</sql>
+
+	<!-- 新增 -->
+	<insert id="insert" parameterType="cn.ffcs.dcl.mybatis.domain.restoilet.ResToilet">
+		<selectKey keyProperty="resToiletId" resultType="long" order="BEFORE">
+			SELECT SEQ_T_RES_TOILET.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO
+		T_RES_TOILET
+		(
+		RES_TOILET_ID,
+		UUID,
+		WC_CODE,
+		GC_WC_TYPE,
+		IS_SUPPORT,
+		TOILET_ADDR,
+		BUILD_TIME,
+		WC_CLASS,
+		AREA,
+		TOILET_ITEM_NUM,
+		DISPOSAL_EX_METHON,
+		IS_VALID,
+		CREATOR,
+		CREATE_TIME,
+		UPDATOR,
+		UPDATE_TIME,
+		RE_ORG_CODE,
+		REGION_NAME,
+		ORG_CODE,
+		RES_TOILET_EQUIP_ID,
+		GUID,
+		IS_ACTUAL_VALID
+		) VALUES (
+		#{resToiletId,jdbcType=DECIMAL},
+		SYS_GUID(),
+		#{wcCode,jdbcType=VARCHAR},
+		#{gcWcType,jdbcType=VARCHAR},
+		#{isSupport,jdbcType=VARCHAR},
+		#{toiletAddr,jdbcType=VARCHAR},
+		#{buildTime,jdbcType=VARCHAR},
+		#{wcClass,jdbcType=VARCHAR},
+		#{area,jdbcType=DECIMAL},
+		#{toiletItemNum,jdbcType=DECIMAL},
+		#{disposalExMethon,jdbcType=VARCHAR},
+		'1',
+		#{creator,jdbcType=DECIMAL},
+		sysdate,
+		#{updator,jdbcType=DECIMAL},
+		sysdate,
+		#{reOrgCode,jdbcType=VARCHAR},
+		#{regionName,jdbcType=VARCHAR},
+		#{orgCode,jdbcType=VARCHAR},
+		#{resToiletEquipId,jdbcType=DECIMAL},
+		#{guid,jdbcType=VARCHAR},
+		#{isActualValid,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- 修改 -->
+	<update id="update" parameterType="cn.ffcs.dcl.mybatis.domain.restoilet.ResToilet">
+		UPDATE
+		T_RES_TOILET
+		<set>
+			<if test="uuid != null " >
+				UUID=#{uuid,jdbcType=VARCHAR},
+			</if>
+			<if test="wcCode != null " >
+				WC_CODE=#{wcCode,jdbcType=VARCHAR},
+			</if>
+			<if test="gcWcType != null " >
+				GC_WC_TYPE=#{gcWcType,jdbcType=VARCHAR},
+			</if>
+			<if test="isSupport != null " >
+				IS_SUPPORT=#{isSupport,jdbcType=VARCHAR},
+			</if>
+			<if test="toiletAddr != null " >
+				TOILET_ADDR=#{toiletAddr,jdbcType=VARCHAR},
+			</if>
+			<if test="buildTime != null " >
+				BUILD_TIME=#{buildTime,jdbcType=VARCHAR},
+			</if>
+			<if test="wcClass != null " >
+				WC_CLASS=#{wcClass,jdbcType=VARCHAR},
+			</if>
+			<if test="area != null " >
+				AREA=#{area,jdbcType=DECIMAL},
+			</if>
+			<if test="toiletItemNum != null " >
+				TOILET_ITEM_NUM=#{toiletItemNum,jdbcType=DECIMAL},
+			</if>
+			<if test="disposalExMethon != null " >
+				DISPOSAL_EX_METHON=#{disposalExMethon,jdbcType=VARCHAR},
+			</if>
+			<if test="isValid != null " >
+				IS_VALID=#{isValid,jdbcType=VARCHAR},
+			</if>
+			<if test="updator != null " >
+				UPDATOR=#{updator,jdbcType=DECIMAL},
+			</if>
+			<if test="reOrgCode != null " >
+				RE_ORG_CODE=#{reOrgCode,jdbcType=VARCHAR},
+			</if>
+			<if test="regionName != null " >
+				REGION_NAME=#{regionName,jdbcType=VARCHAR},
+			</if>
+			<if test="orgCode != null " >
+				ORG_CODE=#{orgCode,jdbcType=VARCHAR},
+			</if>
+			<if test="resToiletEquipId != null " >
+				RES_TOILET_EQUIP_ID=#{resToiletEquipId,jdbcType=DECIMAL},
+			</if>
+			<if test="guid != null " >
+				GUID=#{guid,jdbcType=DECIMAL},
+			</if>
+			<if test="isActualValid != null " >
+				IS_ACTUAL_VALID=#{isActualValid,jdbcType=DECIMAL},
+			</if>
+			UPDATE_TIME = sysdate
+		</set>
+		WHERE
+		UUID= #{uuid,jdbcType=VARCHAR}
+	</update>
+
+	<!-- 详情 -->
+	<select id="searchById" parameterType="java.lang.String"  resultMap="BaseResultMap">
+		SELECT
+			T.UUID,
+			T.WC_CODE,
+			T.GC_WC_TYPE,
+			T.IS_SUPPORT,
+			T.TOILET_ADDR,
+			T.BUILD_TIME,
+			T.WC_CLASS,
+			T.AREA,
+			T.TOILET_ITEM_NUM,
+			T.DISPOSAL_EX_METHON,
+			T.IS_VALID,
+			T.CREATOR,
+			T.CREATE_TIME,
+			T.UPDATOR,
+			T.UPDATE_TIME,
+			T.RE_ORG_CODE,
+			T.REGION_NAME,
+			T.ORG_CODE,
+			T.RES_TOILET_EQUIP_ID,
+			T.GUID,
+			T.IS_ACTUAL_VALID
+		FROM
+			T_RES_TOILET T
+			WHERE
+		UUID= #{uuid,jdbcType=VARCHAR}
+	</select>
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="cn.ffcs.dcl.mybatis.domain.restoilet.ResToilet">
+		UPDATE
+			T_RES_TOILET
+		SET IS_VALID = '0', UPDATE_TIME = SYSDATE, UPDATOR = #{updator,jdbcType=DECIMAL}
+				WHERE
+		UUID= #{uuid,jdbcType=VARCHAR}
+	</delete>
+
+
+	<!-- 修改 -->
+	<update id="updateEquip" parameterType="cn.ffcs.dcl.mybatis.domain.restoilet.ResToilet">
+		update T_RES_TOILET
+		set RES_TOILET_EQUIP_ID = #{resToiletEquipId,jdbcType=DECIMAL}
+		WHERE
+		IS_VALID = '1'
+		and UUID IN
+		<foreach item="item" index="index" collection="wcIds" open="("
+				 separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+	<!-- 获取厕所编号 -->
+	<select id="searchWcMaxCode" resultType="java.lang.String">
+		select  max(WC_CODE) MAXCODE from T_RES_TOILET
+        where RES_TOILET_EQUIP_ID = #{resToiletEquipId,jdbcType=DECIMAL}
+        and IS_VALID = '1'
+        group by RES_TOILET_EQUIP_ID
+	</select>
+
+	<!-- 详情 -->
+	<select id="searchByIds" parameterType="long"  resultMap="BaseResultMap">
+		SELECT
+			T.RES_TOILET_ID,
+			T.UUID,
+			T.WC_CODE,
+			T.GC_WC_TYPE,
+			T.IS_SUPPORT,
+			T.TOILET_ADDR,
+			T.BUILD_TIME,
+			T.WC_CLASS,
+			T.AREA,
+			T.TOILET_ITEM_NUM,
+			T.DISPOSAL_EX_METHON,
+			T.IS_VALID,
+			T.CREATOR,
+			T.CREATE_TIME,
+			T.UPDATOR,
+			T.UPDATE_TIME,
+			T.RE_ORG_CODE,
+			T.REGION_NAME,
+			T.ORG_CODE,
+			T.RES_TOILET_EQUIP_ID,
+			T.GUID,
+			T.IS_ACTUAL_VALID
+		FROM
+			T_RES_TOILET T
+			WHERE
+		RES_TOILET_ID= #{id,jdbcType=DECIMAL}
+	</select>
+
+</mapper>

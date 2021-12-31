@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.dubbo:dubbo:2.7.11-ffcs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/apache/dubbo/dubbo/2.7.11-ffcs/dubbo-2.7.11-ffcs.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/apache/dubbo/dubbo/2.7.11-ffcs/dubbo-2.7.11-ffcs-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/apache/dubbo/dubbo/2.7.11-ffcs/dubbo-2.7.11-ffcs-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

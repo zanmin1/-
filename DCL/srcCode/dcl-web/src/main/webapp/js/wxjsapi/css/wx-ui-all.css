@@ -1,0 +1,86 @@
+/* written by cx */
+html, body {height: 100%; font-size: 62.5%; }
+body {position: relative; font:1.5rem/1.5 Helvetica,arial,"Microsoft YaHei","微软雅黑",sans-serif;color:#333;min-width:320px;max-width:1024px;margin:0 auto;}
+a { text-decoration:none; color:#333;}
+div { position:relative;}
+.wx-pop-box {
+    position: absolute;
+    z-index: 99;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    max-width: 1024px;
+}
+
+.wx-pop-bg {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.wx-pop-mid-wrap {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    margin-top: -150px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 4px;
+	overflow: hidden;
+}
+
+.wx-pop-infor {
+    padding: 30px 20px 30px;
+    max-height: 210px;
+    overflow: auto;
+}
+
+.wx-wrap-tit-only {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 0.5em;
+    color: #666;
+}
+
+.wx-pop-btn {
+    text-align: center;
+    overflow: auto;
+    font-size: 1.6rem;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0px 20px;
+    padding-bottom: 30px;
+}
+
+.wx-pop-btn .wx-btn-border {
+    color: #0f8add;
+    border: 1px solid #0f8add;
+    border-radius: 6px;
+}
+
+.wx-pop-btn a+a {
+    margin-left: 10px;
+}
+
+.wx-btn-blue {color:#fff !important; background:#31a6f5; background:-webkit-linear-gradient(left,#31a6f5,#008fdd); }
+.wx-btn-orange {color:#fff !important;background:#ffc34c; background:-webkit-linear-gradient(left,#ffc34c,#ffb74d) !important; }
+.wx-btn-gray{color:#fff; background:#b7b7b7; background:-webkit-linear-gradient(left,#b7b7b7,#c5c5c5) !important; }
+.wx-btn-green{color:#fff; background:#31f5a4; background:-webkit-linear-gradient(left,#1ce793,#00dd82) !important; }
+.wx-btn-red{color:#fff; background:#ff6a7a; background:-webkit-linear-gradient(left,#ff6a7a,#ff5567) !important; }
+.wx-btn-white{color:#31a6f5; background:#fff; border:1px solid #31a6f5; }
+
+.wx-pop-btn a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    -webkit-flex: 1;
+    flex: 1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}

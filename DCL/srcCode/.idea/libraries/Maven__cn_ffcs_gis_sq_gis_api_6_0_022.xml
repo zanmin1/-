@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.ffcs.gis:sq-gis-api:6.0.022">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/gis/sq-gis-api/6.0.022/sq-gis-api-6.0.022.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/gis/sq-gis-api/6.0.022/sq-gis-api-6.0.022-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/gis/sq-gis-api/6.0.022/sq-gis-api-6.0.022-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.ffcs.oa:sq-oa-web-api:4.0.027">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/oa/sq-oa-web-api/4.0.027/sq-oa-web-api-4.0.027.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/oa/sq-oa-web-api/4.0.027/sq-oa-web-api-4.0.027-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/oa/sq-oa-web-api/4.0.027/sq-oa-web-api-4.0.027-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

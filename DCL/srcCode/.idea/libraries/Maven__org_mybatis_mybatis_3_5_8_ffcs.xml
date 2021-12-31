@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mybatis:mybatis:3.5.8-ffcs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/mybatis/mybatis/3.5.8-ffcs/mybatis-3.5.8-ffcs.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/mybatis/mybatis/3.5.8-ffcs/mybatis-3.5.8-ffcs-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/org/mybatis/mybatis/3.5.8-ffcs/mybatis-3.5.8-ffcs-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

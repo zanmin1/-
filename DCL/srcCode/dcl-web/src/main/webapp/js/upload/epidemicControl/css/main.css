@@ -1,0 +1,223 @@
+@CHARSET "UTF-8";
+body{background-color: #f5f8fa; }
+/* 健康登记入口*/
+.enter-wrap{padding: 0px 15px;overflow: hidden;}
+.enter-wrap > li {margin-top: 30px;}
+.face-wrap{position: relative;display: block;height: 75px;background-color: #ffffff;-webkit-box-shadow: 0px 1px 8px rgba(204, 204, 204, 0.3);box-shadow: 0px 1px 8px rgba(204, 204, 204, 0.3);border-radius: 9px;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.icon-infor-add{background: url(../images/icon-infor-add.png) no-repeat;}
+.icon-infor-all{background: url(../images/icon-infor-all.png) no-repeat;}
+i[class^="icon-infor-"]{display: block;width: 40px;height: 40px;margin: 0px 19px 0px 24px;background-size: 100%;}
+.face-wrap>p{font-size: 1.6rem;color: #fff;line-height: 1;}
+.face-wrap.bg-red{background-image: -webkit-linear-gradient(-90deg, rgba(255, 197, 122, 1) 0%, rgba(255, 112, 109, 1) 100%);background-image: -moz-linear-gradient(-90deg, rgba(255, 197, 122, 1) 0%, rgba(255, 112, 109, 1) 100%);background-image: -o-linear-gradient(-90deg, rgba(255, 197, 122, 1) 0%, rgba(255, 112, 109, 1) 100%);background-image: linear-gradient(-90deg, rgba(255, 197, 122, 1) 0%, rgba(255, 112, 109, 1) 100%), linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));-webkit-box-shadow: 0px 10px 10px 0px rgba(255, 143, 112, 0.3);-moz-box-shadow: 0px 10px 10px 0px rgba(255, 143, 112, 0.3);box-shadow: 0px 10px 10px 0px rgba(255, 143, 112, 0.3);}
+.face-wrap.bg-blue{background-image: -webkit-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);background-image: -moz-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);background-image: -o-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);background-image: linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%), linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));-webkit-box-shadow: 0px 10px 10px 0px rgba(69, 143, 223, 0.3);-moz-box-shadow: 0px 10px 10px 0px rgba(69, 143, 223, 0.3);box-shadow: 0px 10px 10px 0px rgba(69, 143, 223, 0.3);}
+.face-wrap:after{content: ""; position: absolute;width: 8px;height: 100%;top:0px;right:20px;background: url(../images/right-icon-white.png) center center no-repeat;background-size: 100%;}
+/*---------承诺书---------*/
+.commit-box { margin:15px 15px 80px; padding:15px 15px 20px; border-radius:9px; background-color:#fff; box-shadow:0px 3px 5px  rgba(0,0,0,0.05)}
+.tit-sqs { padding-bottom: 15px; text-align: center; font-size: 2rem; font-weight: bold; }
+.tit-sqs span{position: relative;}
+.commit-con > p{ color:#666; margin-top:10px; line-height:1.8em;}
+.align-r { text-align:right; }
+.commit-con{border-top: 1px dashed #ededed; }
+.commit-con.commit-man{margin-top: 15px;padding-top: 10px; font-size: 1.4rem;}
+.commit-con.commit-man > p{margin-top: 5px;}
+.commit-con.commit-man > p > span{color: #333; font-weight: bold;}
+/*mui单选样式覆盖*/
+.mui-poppicker-body{border-top-color: #f1f1f2; }
+.mui-btn-blue{color: #ff3b30;}
+.mui-poppicker-btn-cancel{color: #999;}
+.mui-pciker-rule-ft{border-bottom-color: #ff3b30; border-top-color: #ff3b30; }
+.mui-pciker-rule{height:44px; line-height: 44px; margin-top: -27px; }
+.mui-pciker-list{height: 120px; line-height:120px; margin-top: -64px;}
+/*登记详情*/
+.bg-green{background-color: #add695;}
+.infor-top-img{height: 175px; }
+.infor-top-img img{display: block; width:100%; height: 100%;}
+.infor-detail{margin:15px 15px 30px; padding:15px 15px 20px; border-radius:9px; background-color:#fff; box-shadow:0px 3px 5px  rgba(0,0,0,0.05)}
+.infor-con{border-top: 1px dashed #ededed; padding: 30px 0px; line-height: 1.8; font-size: 1.6rem;}
+/*出村凭证*/
+.commit-box2 {
+    margin: 15px 15px 80px;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+.commit-con.pinz{
+     padding: 15px 15px 20px;
+}
+.tit-pz{
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background: #0f8add;
+}
+.tit-pz span {
+    position: relative;
+    color: #fff;
+}
+.zid-p{
+    margin-top: 13px;
+    display:-webkit-flex;display:flex;
+}
+.zid-p:first-child{
+    margin-top: 0px;
+}
+.zid-p label{
+    position: relative;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    width: 6em;
+}
+.zid-p span{
+    -webkit-flex:1;flex:1;
+}
+
+/* 来昌人员健康登记 */
+.divbg{
+    max-width: 1024px;
+    min-height: 100vh;
+    background: url('../images/icon-bg.jpg') no-repeat center;
+    background-size: 100% 100%;
+}
+.enter-wrap-dj{
+    padding: 0px 35px;
+}
+.enter-wrap > li{
+    margin-top: 15px;
+}
+.face-wrap2{
+    height: 50px;
+}
+.face-wrap2:after{
+    display: none;
+}
+.face-wrap2>i[class^="icon-infor-"]{
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px 0px 24px;
+    background-size: 100%;
+}
+
+.icon-infor-all-01{
+    background: url(../images/icon-infor-1-man.png) no-repeat;
+}
+.icon-infor-all-02{
+    background: url(../images/icon-infor-2-sheq.png) no-repeat;
+}
+.icon-infor-all-03{
+    background: url(../images/icon-infor-3-cunz.png) no-repeat;
+}
+.icon-infor-all-04{
+    background: url(../images/icon-infor-4-taxi.png) no-repeat;
+}
+.icon-infor-all-05{
+    background: url(../images/icon-infor-5-bus.png) no-repeat;
+}
+.icon-infor-all-06{
+    background: url(../images/icon-infor-6-qiy.png) no-repeat;
+}
+.icon-infor-all-07{
+    background: url(../images/icon-infor-7-hotel.png) no-repeat;
+}
+.face-wrap2.bg-blue{
+    background-image: -webkit-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);
+    background-image: -moz-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);
+    background-image: -o-linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%);
+    background-image: linear-gradient(-90deg, rgba(236, 187, 82, 1) 0%, rgba(191, 194, 156, 1) 0%, rgba(146, 201, 229, 1) 0%, rgba(97, 149, 222, 1) 100%), linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));-webkit-box-shadow: 0px 10px 10px 0px rgba(69, 143, 223, 0.3);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(69, 143, 223, 0.3);
+    box-shadow: 0px 5px 5px 0px rgba(69, 143, 223, 0.8);
+}   
+
+
+.dengjiTitle>p{
+   text-align: center;
+   font-size: 24px;
+   color: #333;
+   font-weight: 600;
+   padding-top: 40px;
+}
+.fankeBtn{
+    margin: 20px 0;
+}
+.fankeBtn>p{
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.fankeBtn>p>span{
+    color: #ff0000;
+    margin: 0 5px;
+    font-size: 18px;
+}
+.zhubanBtn{
+    padding: 20px 0;
+}
+.zhubanBtn>p{
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.enter-itineraryiinquiry{
+    padding: 0 15px;
+    margin-top: 50px;
+}
+.eii-title>p{
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0 10px;
+    font-weight: bold;
+	color: #333333;
+}
+.eii-title>i{
+    display: block;
+    width: 17px;
+    height: 23px;
+}
+.eii-t-left{
+    background: url(../images/icon-xc-left.png) no-repeat;
+    background-size: 100% 100%;
+}
+.eii-t-right{
+    background: url(../images/icon-xc-right.png) no-repeat;
+    background-size: 100% 100%;
+}
+.eii-content{
+	height: 175px;
+	background-image: linear-gradient(0deg, #e3eef9 0%, #cadbf6 100%), linear-gradient(#f5f8fa, #f5f8fa);
+	background-blend-mode: normal, normal;
+	-webkit-box-shadow: 0px 10px 10px 0px rgba(34, 74, 135, 0.1);
+	box-shadow: 0px 10px 10px 0px rgba(34, 74, 135, 0.1);
+	border-radius: 9px;
+}
+.eii-c-pic{
+    width: 90px;
+    height: 90px;
+    -webkit-box-shadow: 0px 7.5px 17.5px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 7.5px 17.5px 0px rgba(0, 0, 0, 0.05);
+	border-radius: 9px;
+}
+.eii-c-pic>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.eii-content>a{
+    display: block;
+}
+.eii-content>a>p{
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #666666;
+    margin-top: 10px;
+}
+a{
+    -webkit-tap-highlight-color: transparent;
+}
+/* 疫情期间行程查询 start */
+
+/* 疫情期间行程查询 end */

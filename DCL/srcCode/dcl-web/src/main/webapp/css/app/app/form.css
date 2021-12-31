@@ -1,0 +1,107 @@
+/*鏉垮潡*/
+.wrap-box {margin-top:10px; background-color:#fff; }
+.wrap-box:first-child{margin-top: 0px; }
+.box-hd { height:40px; border-bottom:1px solid #ebebeb; line-height:40px; }
+/*----------------------------------------------------濉啓琛ㄥ崟淇℃伅----------------------------------------------------------*/
+.form-wrap { font-size:1.4rem; }
+.form-line { min-height:44px; overflow:auto; border-bottom:1px solid #f0f0f0; box-sizing: border-box; }
+.form-line:last-child { border-bottom:0px;}
+.align-r { text-align:right; }
+.form-line label { float:left; display: block; width:7em; min-height:1.5em; line-height:1.5em; padding:11px 0px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;  }
+.form-line label.w-33 { width:33%; }
+.form-line .label-con{ padding: 11px 0px 11px 0px; line-height:1.5em; overflow:hidden; color:#666; }
+.form-line .label-con .txt-r { color:#ff554c; }
+.form-line input[type="text"]{box-sizing:border-box; display: block; padding-right:10px; width:100%; height: 1.5em; line-height: 1.5em; color:#333; }
+.form-line input[type="text"].txt-c, .form-wrap .form-line input[type="password"].txt-c { color:#ccc; }
+.form-line textarea {   width:100%; padding-right: 10px; box-sizing:border-box; font-family:arial, "Microsoft YaHei","寰蒋闆呴粦", sans-serif; color:#333; margin:0px; line-height:1.5em;  -webkit-appearance: none; resize:none; }
+
+.form-line .right-icon { display:block; position:absolute; top:0px; right:10px; width:7px; height:100%; background:url(../images/right-icon.png) right center no-repeat; background-size:7px; }
+.form-line .select-a {position:relative; display:block; padding-right:25px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color:#333; }
+
+.form-line .select-a.txt-b { color:#666; }
+.form-line .select-a.txt-r {color:#ff554c; }
+.form-line .select-a.txt-g { color:#04c2da; }
+.red-asterisk { color: #ff554c; font-size:1.4rem; vertical-align:-1px;}
+.form-line.only-con .label-con { padding-left:0px;}
+.form-line.only-con .select-a { color:#333; }
+
+/*鍙充晶鍊奸潬鍙冲榻�*/
+.wrap-align-r .label-con{text-align:right; }
+.wrap-align-r .label-con input, .wrap-align-r .label-con textarea{direction: rtl; }
+
+/*鏈夊崟浣�*/
+.right-rq-icon { display:block; position:absolute; top:0px; right:10px; width:19px; height:100%; background:url(../images/icon-calendar.png) center center no-repeat; background-size:19px;}
+.form-v-unit { display:block; position:absolute; top:0px; right:0px; color:#999; padding:11px 10px; line-height:1.5em;}
+.label-con.p-r-unit{padding-right: 40px !important;}
+.label-con.p-r-unit input{padding-right: 0px;}
+/*鏉垮潡鏍囬*/
+.box-hd { height:44px; border-bottom:1px solid #ebebeb; line-height:44px; box-sizing: border-box; overflow: hidden;}
+.box-hd h3 { font-weight:bold; font-size: 1.4rem; }
+.box-hd .a-right {display:block; position:absolute; top:0px; right:0px;  min-width:40px;height:100%; }
+.a-right .right-icon { display:block; float:right; margin-right:10px; width:7px; height:100%; background:url(../images/right-icon.png) center right no-repeat; background-size:7px; }
+.right-icon.a-up { transform:rotate(-90deg); margin-right:14px; }
+.right-icon.a-down { transform:rotate(90deg); margin-right:14px; }
+.form-line .label-switch{padding: 8px 0px;}
+
+/*寮�鍏崇粍浠� start*/
+.form-line .label-switch .switch{float: right;}
+.switch {  position: relative;  height: 28px;  border-radius: 14px;  margin-right: 10px;  box-sizing: border-box;  overflow: hidden;  cursor: pointer;}
+.switch-bg {  position: absolute;  top: 0;  left: 0;  z-index: 2;  height: 100%;  border-radius: 14px;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;}
+.switch-bg > li:last-child {  background-color: #ccc;}
+.switch-blue > li:first-child {  background-color: #0f8add;}
+.switch-yellow > li:first-child {  background-color: #ffcc7f;}
+.switch-bg > li {  height: 100%;}
+.switch-btn {  position: absolute;  top: 1px;  right: 1px;  z-index: 5;  width: 26px;  height: 26px;  background-color: #ffffff;  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);  border-radius: 100%;}
+.switch-des {  display: block;  width: 100%;  height: 100%;  position: absolute;  top: 0;  left: 0;  z-index: 3;  padding: 0 8px;  box-sizing: border-box;  overflow: hidden;  -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;}
+.switch-des > b {  line-height: 2.6rem;  font-size: 1.2rem;  color: #fff;  font-weight: normal;  text-shadow: 0 1px 1px rgba(0, 0, 0, .2);}
+.switch-des > b:first-child {  float: left;}
+.switch-des > b:last-child {  float: right;}
+.switch-xl {  width: 55px;}
+.switch-xl .switch-bg {  width: 110px;}
+.switch-xl .switch-bg > li {  width: 55px;}
+.switch-sm {  width: 48px;}
+.switch-sm .switch-bg {  width: 96px;}
+.switch-sm .switch-bg > li {  width: 48px;}
+/*寮�鍏崇粍浠秂nd*/
+/*澶氭潯璁板綍*/
+.multi-form li{ border-bottom: 1px solid #ebebeb; }
+.multi-label{width:5em; text-align: center; margin-right: 15px;}
+.multi-form-label{display: inline-block; width: 100%; margin-top:11px; border-radius: 2px; font-weight: bold;}
+.multi-form .icon-close{display: inline-block; margin-top: 10px; width:22px; height: 22px; background: url(../images/icon-close-blue.png)no-repeat; background-size: 100%;}
+.add-form-line {display:block; text-align:center; padding:11px 0px; color:#0f8add; height: 44px; overflow: hidden; box-sizing: border-box;}
+.icon-add { display:inline-block; margin-right:10px; vertical-align:-6px; width:22px; height:22px; background:url(../images/icon-add-blue.png) no-repeat; background-size:100%; }
+/*澶氭潯璁板綍-鍦烘櫙2*/
+.multi-form2 li{margin-right: 10px; margin-top: 10px; box-shadow: 0px 0px 10px  rgba(15,138,221,0.4); padding: 10px; border-radius: 2px; }
+/*--------琛ㄥ崟鏍峰紡2 涓婁笅褰㈠紡----------*/
+.form-w-tb .gray-txt {font-size:1.2rem; padding:12px 10px 0px; }
+.form-l-n {color:#666; padding-top:10px; }/*鏍囩鍚嶇О*/
+.form-w-tb .label-con{margin-right: 10px;  }
+.form-w-tb  input{ box-sizing:border-box; display: block; padding:12px;  width:100%; height:44px; line-height: 1.5em; color:#333; background-color:#f5f5f5; border-radius:5px; }
+.form-w-tb  textarea {direction: ltr !important; box-sizing:border-box; padding:12px;  width:100%; height:6em; line-height:1.5em;  color:#333; margin:0px;  background-color:#f5f5f5; border-radius:5px; -webkit-appearance: none; }
+.s-txt { font-size:1.2rem; color:#999; }
+/*--------------------------------------------涓婁紶鐓х墖--------------------------------------------------*/
+.add-images {padding:5px; overflow:auto; }
+.add-images li {position:relative; float:left;  width:25%;  }
+.add-images li a { display:block; margin:5px;  border:1px solid #ebebeb; border-radius:2px; }
+.add-images li img { width:100%; display:block;border-radius:2px;}
+.add-images .del-file-img {position:absolute; top:0px; right:0px;  height:25%; width:25%; max-height:26px; max-width:26px;  z-index:2; cursor:pointer; background:url(../images/icon-del-img.png) top center no-repeat; background-size:100%;}
+.add-images li.upload-box a { background-color:#fafafa; border:1px dashed #ebebeb;}
+.upload-input { position:absolute; top:6px; left:6px; right:6px; bottom:6px;}
+.upload-box input[type="file"] {display:block; position:absolute; top:0px; bottom:0px; left:0px; right:0px; width: 100%; z-index:2;  opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.wrap-file .add-images { margin-left:-10px; }
+
+/*璇︽儏*/
+.form-detail label{ color:#666; }
+.form-detail .value-txt { color:#333;}
+input:-moz-placeholder, textarea:-moz-placeholder{ color:#bebebe; opacity:1;/*Firefox 18-*/}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#bebebe; opacity:1;/*Firefox 19+*/}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder{  color:#bebebe; opacity:1;/*ms*/}
+input::-webkit-input-placeholder,  textarea::-webkit-input-placeholder{  color:#bebebe; opacity:1;/*webkit*/}
+.only-con input::-moz-placeholder, .only-con textarea::-moz-placeholder {color:#333; opacity:1;/*Firefox 19+*/}
+.only-con input::-webkit-input-placeholder, .only-con textarea::-webkit-input-placeholder{  color:#333; opacity:1;/*webkit*/}
+.only-con input::-webkit-input-placeholder, .only-con textarea::-webkit-input-placeholder{  color:#d5d5d5; opacity:1;}
+
+
+
+
+

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ffcs.dcl.mybatis.persistence.attractionsmanagement.AttractionsManagementMapper">
+	<resultMap id="BaseResultMap" type="cn.ffcs.dcl.mybatis.domain.attractionsmanagement.AttractionsManagement">
+		<id column="ATTRACTIONS_ID" property="attractionsId" jdbcType="DECIMAL" /> <!--景点主键-->
+		<result column="ATTRACTIONS_NAME" property="attractionsName" jdbcType="VARCHAR" /> <!--景点名称-->
+		<result column="ATTRACTIONS_TYPE" property="attractionsType" jdbcType="VARCHAR" /> <!--景点类型-->
+		<result column="CHARGE_TYPE" property="chargeType" jdbcType="VARCHAR" /> <!--收费类型-->
+		<result column="ATTRACTIONS_DESC" property="attractionsDesc" jdbcType="CLOB"  typeHandler="org.apache.ibatis.type.ClobTypeHandler"/> 		 <!--景点介绍-->
+		<result column="ISSU_TIME" property="issuTime" jdbcType="VARCHAR" /> <!--发布时间-->
+		<result column="UPLOAD_TIME" property="uploadTime" jdbcType="VARCHAR" /> <!--上传时间-->
+		<result column="ISSU_PERSON" property="issuPerson" jdbcType="VARCHAR" /> <!--发布人-->
+		<result column="ISSU_ORG_NAME" property="issuOrgName" jdbcType="VARCHAR" /> <!--发布机构名称-->
+		<result column="ISSU_STATUS" property="issuStatus" jdbcType="VARCHAR" /> <!--发布状态-->
+		<result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" /> <!--所属行政村编码-->
+		<result column="UUID" property="uuid" jdbcType="VARCHAR" /> <!--UUID-->
+		<result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" /> <!--所属行政村名称-->
+		<result column="REMARK" property="remark" jdbcType="VARCHAR" /> <!--备注-->
+		<result column="IS_VALID" property="isValid" jdbcType="VARCHAR" /> <!--是否有效-->
+		<result column="CREATOR" property="creator" jdbcType="DECIMAL" /> <!--创建人-->
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" /> <!--创建时间-->
+		<result column="UPDATOR" property="updator" jdbcType="DECIMAL" /> <!--修改人-->
+		<result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" /> <!--修改时间-->
+		<result column="ATTRACTIONS_TIME" property="attractionsTime" jdbcType="VARCHAR" /> <!--开放时段-->
+		<result column="ADDRESS" property="address" jdbcType="VARCHAR" /> <!--景点地址-->
+		<result column="PIC_URL" property="picUrl" jdbcType="VARCHAR" /> <!--景点地址-->
+		<result column="X" property="x" jdbcType="VARCHAR" /> <!--经度-->
+		<result column="Y" property="y" jdbcType="VARCHAR" /> <!--纬度-->
+
+
+	</resultMap>
+		
+	<!-- 列表（总数） -->	
+	<select id="countList"  resultType="java.lang.Long">
+		SELECT COUNT(1) FROM T_DV_ATTRACTIONS_MANAGEMENT T
+		<include refid="find_where" />
+	</select>
+	
+	<!-- 列表（分页）-->
+	<select id="searchList"  resultMap="BaseResultMap">
+		SELECT
+			T.ATTRACTIONS_NAME,
+			T.ATTRACTIONS_TYPE,
+			T.CHARGE_TYPE,
+			T.ISSU_PERSON,
+			T.ISSU_ORG_NAME,
+			T.ATTRACTIONS_DESC,
+			T.ISSU_STATUS,
+			T.ORG_CODE,
+			T.UUID,
+			T.ORG_NAME,
+			T.REMARK,
+			T.ATTRACTIONS_TIME,
+			T.ADDRESS,
+			T.PIC_URL,
+			T.X,
+			T.Y
+		FROM
+			T_DV_ATTRACTIONS_MANAGEMENT T
+		<include refid="find_where" />
+		ORDER BY 
+			T.UPDATE_TIME DESC
+	</select>
+	
+	<!-- 列表（条件） -->	
+	<sql id="find_where">
+		<where>
+			T.IS_VALID = '1'
+
+			<if test="attractionsDesc != null and attractionsDesc != ''" >
+				<![CDATA[ AND T.ATTRACTIONS_DESC  LIKE '%'|| #{attractionsDesc,jdbcType=VARCHAR} ||'%'  ]]>
+			</if>
+
+			<if test="orgCode != null and orgCode != ''" >
+				<![CDATA[ AND T.ORG_CODE LIKE #{orgCode,jdbcType=VARCHAR}||'%' ]]>
+			</if>
+
+			<if test="issuStatus != null and issuStatus != ''" >
+				<![CDATA[ AND T.ISSU_STATUS = #{issuStatus} ]]>
+			</if>
+
+			<if test="attractionsType != null and attractionsType != ''" >
+				<![CDATA[ AND T.ATTRACTIONS_TYPE = #{attractionsType} ]]>
+			</if>
+
+			<if test="chargeType != null and chargeType != ''" >
+				<![CDATA[ AND T.CHARGE_TYPE = #{chargeType} ]]>
+			</if>
+
+			<if test="attractionsName != null and attractionsName != ''" >
+				<![CDATA[ AND  T.ATTRACTIONS_NAME LIKE '%'|| #{attractionsName} ||'%' ]]>
+			</if>
+
+		</where>
+	</sql>
+	
+	<!-- 新增 -->	
+	<insert id="insert" parameterType="cn.ffcs.dcl.mybatis.domain.attractionsmanagement.AttractionsManagement">
+		<selectKey keyProperty="attractionsId" resultType="long" order="BEFORE"> 
+			SELECT SEQ_T_DV_ATTR_MANAGEMENT.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO
+			T_DV_ATTRACTIONS_MANAGEMENT
+		(
+			ATTRACTIONS_ID,
+			ATTRACTIONS_NAME,
+			ATTRACTIONS_TYPE,
+			CHARGE_TYPE,
+			ATTRACTIONS_DESC,
+			ISSU_TIME,
+			UPLOAD_TIME,
+			ISSU_PERSON,
+			ISSU_ORG_NAME,
+			ISSU_STATUS,
+			ORG_CODE,
+			UUID,
+			ORG_NAME,
+			REMARK,
+			IS_VALID,
+			CREATOR,
+			CREATE_TIME,
+			UPDATOR,
+			UPDATE_TIME,
+			ATTRACTIONS_TIME,
+			ADDRESS,
+			PIC_URL,
+		 	X,
+		 	Y
+		) VALUES (
+			#{attractionsId,jdbcType=DECIMAL},
+			#{attractionsName,jdbcType=VARCHAR},
+			#{attractionsType,jdbcType=VARCHAR},
+			#{chargeType,jdbcType=VARCHAR},
+			#{attractionsDesc,jdbcType=VARCHAR},
+			sysdate,
+			TO_DATE(#{uploadTime,jdbcType=VARCHAR} ,'YYYY-MM-DD'),
+			#{issuPerson,jdbcType=VARCHAR},
+			#{issuOrgName,jdbcType=VARCHAR},
+			#{issuStatus,jdbcType=VARCHAR},
+			#{orgCode,jdbcType=VARCHAR},
+			sys_guid(),
+			#{orgName,jdbcType=VARCHAR},
+			#{remark,jdbcType=VARCHAR},
+			'1',
+			#{creator,jdbcType=DECIMAL},
+			sysdate,
+			#{updator,jdbcType=DECIMAL},
+			sysdate,
+			#{attractionsTime,jdbcType=VARCHAR},
+			#{address,jdbcType=VARCHAR},
+			#{picUrl,jdbcType=VARCHAR},
+			#{x,jdbcType=VARCHAR},
+			#{y,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<!-- 修改 -->	
+	<update id="update" parameterType="cn.ffcs.dcl.mybatis.domain.attractionsmanagement.AttractionsManagement">
+		UPDATE
+			T_DV_ATTRACTIONS_MANAGEMENT
+		<set> 
+			<if test="attractionsName != null " >
+				ATTRACTIONS_NAME=#{attractionsName,jdbcType=VARCHAR},
+			</if>
+			<if test="attractionsType != null " >
+				ATTRACTIONS_TYPE=#{attractionsType,jdbcType=VARCHAR},
+			</if>
+			<if test="chargeType != null " >
+				CHARGE_TYPE=#{chargeType,jdbcType=VARCHAR},
+			</if>
+			<if test="attractionsDesc != null " >
+				ATTRACTIONS_DESC=#{attractionsDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="issuTime != null " >
+				ISSU_TIME=	TO_DATE(#{issuTime,jdbcType=VARCHAR} ,'YYYY-MM-DD'),
+			</if>
+			<if test="uploadTime != null " >
+				UPLOAD_TIME= TO_DATE(#{uploadTime,jdbcType=VARCHAR} ,'YYYY-MM-DD'),
+			</if>
+			<if test="issuPerson != null " >
+				ISSU_PERSON=#{issuPerson,jdbcType=VARCHAR},
+			</if>
+			<if test="issuOrgName != null " >
+				ISSU_ORG_NAME=#{issuOrgName,jdbcType=VARCHAR},
+			</if>
+			<if test="issuStatus != null " >
+				ISSU_STATUS=#{issuStatus,jdbcType=VARCHAR},
+			</if>
+			<if test="orgCode != null " >
+				ORG_CODE=#{orgCode,jdbcType=VARCHAR},
+			</if>
+			<if test="uuid != null " >
+				UUID=#{uuid,jdbcType=VARCHAR},
+			</if>
+			<if test="orgName != null " >
+				ORG_NAME=#{orgName,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null " >
+				REMARK=#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="isValid != null " >
+				IS_VALID=#{isValid,jdbcType=VARCHAR},
+			</if>
+			<if test="updator != null " >
+				UPDATOR=#{updator,jdbcType=DECIMAL},
+			</if>
+			<if test="attractionsTime != null " >
+				ATTRACTIONS_TIME=#{attractionsTime,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null " >
+				ADDRESS=#{address,jdbcType=VARCHAR},
+			</if>
+			<if test="picUrl != null " >
+				PIC_URL=#{picUrl,jdbcType=VARCHAR},
+			</if>
+
+			<if test="x != null " >
+				X=#{x,jdbcType=VARCHAR},
+			</if>
+			<if test="y != null " >
+				Y=#{y,jdbcType=VARCHAR},
+			</if>
+
+		 	UPDATE_TIME = sysdate
+		</set>
+		WHERE
+			UUID=#{uuid,jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 详情 -->	
+	<select id="searchById" parameterType="long"  resultMap="BaseResultMap">
+		SELECT
+			T.ATTRACTIONS_ID,
+			T.ATTRACTIONS_NAME,
+			T.ATTRACTIONS_TYPE,
+			T.CHARGE_TYPE,
+			T.ISSU_PERSON,
+			T.ISSU_ORG_NAME,
+			T.ISSU_STATUS,
+			T.ORG_CODE,
+			T.UUID,
+			T.ORG_NAME,
+			T.REMARK,
+			T.ADDRESS,
+			T.PIC_URL
+		FROM
+			T_DV_ATTRACTIONS_MANAGEMENT T
+		WHERE
+			ATTRACTIONS_ID= #{attractionsId,jdbcType=DECIMAL} 
+	</select>
+
+	<!-- 详情 -->
+	<select id="searchByUUId" parameterType="String"  resultMap="BaseResultMap">
+		SELECT
+			T.ATTRACTIONS_ID,
+			T.ATTRACTIONS_NAME,
+			T.ATTRACTIONS_TYPE,
+			T.CHARGE_TYPE,
+			T.ATTRACTIONS_DESC,
+			T.ISSU_PERSON,
+			T.ISSU_ORG_NAME,
+			T.ISSU_STATUS,
+			T.ORG_CODE,
+			T.UUID,
+			T.ORG_NAME,
+			T.REMARK,
+			T.ATTRACTIONS_TIME,
+			T.ADDRESS,
+			T.PIC_URL,
+			T.X,
+			T.Y
+		FROM
+			T_DV_ATTRACTIONS_MANAGEMENT T
+		WHERE
+			UUID= #{uuid,jdbcType=VARCHAR}
+	</select>
+
+
+	<!-- 删除 -->	
+	<delete id="delete" parameterType="cn.ffcs.dcl.mybatis.domain.attractionsmanagement.AttractionsManagement">
+		UPDATE
+			T_DV_ATTRACTIONS_MANAGEMENT
+		SET IS_VALID = '0', UPDATE_TIME = SYSDATE, UPDATOR = #{updator,jdbcType=DECIMAL}
+		WHERE
+			UUID= #{uuid,jdbcType=VARCHAR}
+
+	</delete>
+</mapper>
+
+<!-- 				TO_CHAR(T.ISSU_TIME ,'YYYY-MM-DD')	  ISSU_TIME,
+			TO_CHAR(T.UPLOAD_TIME ,'YYYY-MM-DD')	  UPLOAD_TIME,-->

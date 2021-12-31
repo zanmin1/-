@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.ffcs.sqopen:sq-common-lang:3.0.042">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/sqopen/sq-common-lang/3.0.042/sq-common-lang-3.0.042.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/sqopen/sq-common-lang/3.0.042/sq-common-lang-3.0.042-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ideastore/cn/ffcs/sqopen/sq-common-lang/3.0.042/sq-common-lang-3.0.042-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
