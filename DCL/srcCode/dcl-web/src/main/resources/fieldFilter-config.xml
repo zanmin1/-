@@ -1,7 +1,0 @@
-<appMeta appCode="dcl" appName="dcl" permissionClass="cn.ffcs.components.dataMasking.security.zzgridPermissionsFilter" defaultInfoOrgCodeClass="cn.ffcs.components.dataMasking.security.zzgridInfoOrgCode">
-    <controllerInfo controllerClassName="cn.ffcs.dcl.szsh.controller.IntegralBankController" controllerAlias="积分银行大屏">
-        <methodInfo methodName="getScoreRankingData" methodAlias="获取积分排名信息" dataPosition="0" dataType="cn.ffcs.components.dataMasking.security.data.ListData" customCompletion="0">
-            <fieldInfo fieldName="mobile" fieldAlias="手机号" ruleClassSpaceDefault="cn.ffcs.components.dataMasking.security.rules.MobilePhoneRule"/>
-        </methodInfo>
-    </controllerInfo>
-</appMeta>
